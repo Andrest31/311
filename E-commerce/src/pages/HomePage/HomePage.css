@@ -1,0 +1,265 @@
+.page {
+
+	min-height: 100vh;
+	height: auto;
+    width: 1440px;
+    margin: 90px auto 0px auto;
+    background-color: var(--font);
+
+
+}
+
+
+
+.products-content{
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding-bottom: 48px;
+
+}
+
+.products__body{
+    width: 100%;
+}
+
+
+.products__header{
+    width: 653px;
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    align-items: center;
+
+
+}
+.products__description{
+    text-align: center;
+}
+
+.products__content {
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap:48px;
+    width: 100%;   
+    
+}
+.products__subtitle{
+    display: flex;
+    width: 266px;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--space-xl);
+    text-align: left;
+}
+
+
+
+.products__cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); /* Устанавливает фиксированную ширину для карточек */
+    gap: 30px 80px; 
+    justify-content: center; 
+}
+
+.products__column {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+.item-products {
+}
+.item-service__img {
+    width: 100%;
+    height: auto; 
+    overflow: hidden; /* Убирает лишние части изображения */
+    max-width: 250px;
+    max-height: 160px;
+    border-radius: 10px;
+    border: 2px solid var(--border);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item-service__img img {
+    width: 100%;
+    height: auto; /* Сохраняет пропорции изображения */
+    object-fit: contain; /* Изображение сохраняет пропорции и помещается в контейнер */
+   
+}
+.item-service__title {
+    line-height: 1.25; /* Увеличенный межстрочный интервал */
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding-top: 10px;
+    height: auto;
+    min-height: 50px;
+/* 
+    text-transform: uppercase; */
+}
+.item-service__price{
+    margin-bottom: 10px;
+    font-size: 1.125rem;
+    font-weight: 500;
+
+}
+
+.item-service_buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.item-service__button {
+    text-decoration: none
+}
+
+
+.button-page{
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     background-color: var(--main_color);
+     line-height: 142%;
+     padding: 5px 20px;
+     text-align: center;
+     border-radius: 7px;
+     flex-wrap: nowrap;
+     cursor: pointer;
+     font-size: 1.125rem;
+
+}
+
+
+
+
+.main-block__button__add{
+    padding: 7px 14px;
+    border-radius: 50%;
+    background-color: var(--main_color);
+    color: white;
+
+}
+
+.products__controls{
+    width: 100%;
+    gap: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 48px;
+   
+}
+.products__search {
+    display: flex;
+    gap: var(--space-xl); 
+}
+
+.products__search-column--left {
+    width: 1079px; 
+}
+
+.products__search-column--right {
+    flex: 1; 
+}
+
+
+.products__filter{
+    width: 300px;
+
+}
+
+
+.basket-container{
+    position: relative;
+}
+
+.basket__img{
+    padding: 12px;
+    border-radius: 50%;
+    background-color: white;
+    width: 65px;
+    height: 65px;
+
+}
+.basket_amount {
+    position: absolute;
+    top: 0;
+    left: 45px; 
+    background-color: var(--main_color);
+    width: 20px; /* Увеличил размер кружка для наглядности */
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.products__search input {
+  padding: 10px;
+  appearance: none; /* Убирает стандартную стрелку */
+  -moz-appearance: none; /* Для Firefox */
+  -webkit-appearance: none; /* Для Safari и Chrome */
+  width: 100%; /* Ширина на 100% */
+  box-sizing: border-box; /* Учитываем padding и border в ширину */
+  position: relative; /* Для правильного позиционирования */
+}
+
+/* Дополнительные стили для select */
+.products__search select {
+    padding: 10px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    appearance: none; /* Убирает стандартную стрелку */
+    -moz-appearance: none; /* Для Firefox */
+    -webkit-appearance: none; /* Для Safari и Chrome */
+
+    width: 100%; /* Ширина на 100% */
+    box-sizing: border-box; /* Учитываем padding и border в ширину */
+    position: relative; /* Для правильного позиционирования */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5"><path fill="%23666" d="M0 0l5 5 5-5H0z"/></svg>') no-repeat right 10px center; /* Ваша стрелочка */
+
+    background-size: 12px; /* Размер стрелочки */
+    padding-right: 30px; /* Пространство для стрелочки */
+}
+
+
+
+.products__pagination {
+    width: 296px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+  }
+  
+  .pagination-button {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .pagination-button.active-page {
+    background-color: #407d7d;
+    width: 38px;
+    height: 42px;
+    color: #fff;
+  }
+  
+
+
+  

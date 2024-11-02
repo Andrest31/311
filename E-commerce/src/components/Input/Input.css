@@ -1,0 +1,68 @@
+
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: white; /* Белая заливка */
+    padding: 5px 0;
+    font-size: var(--font-size-large);
+    border: 1px solid white;
+}
+
+/* .input-wrapper.input-empty {
+    border-color: white;
+}
+
+.input-wrapper.input-not-empty {
+    border-color: var(--primary-color);
+} */
+
+
+
+
+.input-wrapper.input-disabled {
+    background-color: var(--disabled-background-color);
+    /* border-color: var(--disabled-border-color); */
+    color: var(--disabled-text-color);
+    cursor: not-allowed;
+}
+
+.input-wrapper:focus-within {
+    border: 1px solid var(--primary-color); /* Цвет рамки при фокусировке */
+}
+
+.input-element {
+    width: 100%;
+    padding-left: 8px; /* Отступ текста от левого края */
+    height: var(--input-height);
+    padding: 0 var(--spacing-medium); /* Исходные значения */
+    font-size: var(--font-size-large);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--text-primary-color);
+    transition: background-color var(--transition-duration) var(--transition-easing);
+    padding-right: calc(var(--spacing-medium) + 20px); /* Увеличенный padding для слота */
+}
+
+
+.input-element::placeholder {
+    color: var(--text-secondary-color);
+}
+
+.input-element:disabled {
+    background-color: var(--disabled-background-color);
+    color: var(--disabled-text-color);
+    opacity: 0.6;
+}
+
+.input-after-slot {
+    position: absolute;
+    right: 14px; /* Отступ иконки от правого края */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-color);
+    pointer-events: none; /* Иконка не будет интерактивной */
+}

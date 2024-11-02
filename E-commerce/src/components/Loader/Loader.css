@@ -1,0 +1,83 @@
+
+.element {
+  width: 172px;
+  height: 80px;
+  top: 116px;
+  left: 28px;
+  padding: 10px 0px 0px 0px; /* верхнее отступление 10px */
+  gap: 10px; /* промежуток между вложенными элементами */
+  border-radius: 5px 0px 0px 0px; /* закругление углов */
+  border-width: 1px 0px 0px 0px; /* только верхняя граница толщиной 1px */
+  border-style: solid; /* добавление стиля границы */
+  opacity: 1; /* делаем элемент видимым, если необходимо скрыть - используйте 0 */
+  
+}
+
+
+
+
+
+
+ .loader {
+    border: 5px solid rgba(81, 133, 129, 1);
+    transform: rotate(-58deg); /* Поворот на 13 градусов влево */
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+  
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .container-l{
+    width: 60px;
+    height: 60px;
+  }
+  .container-m{
+    width: 48px;
+    height: 48px;
+  }
+  .container-s{
+    width: 24px;
+    height: 24px;
+  }
+  
+  .loader-l {
+ 
+  position: relative; /* Позиционирование для смещения top и left */
+  top: 15.01px; /* Смещение сверху */
+  left: 6.01px; /* Смещение слева */
+  width: 40px;
+  height: 40px;
+
+}
+  .loader-m {
+    border: 4px solid rgba(81, 133, 129, 1);
+  position: relative; /* Позиционирование для смещения top и left */
+  top: 12.01px; /* Смещение сверху */
+  left: 4.81px; /* Смещение слева */
+  width: 32px;
+  height: 32px;
+  border-bottom-color: transparent;
+
+}
+  .loader-s {
+border: 2px solid rgba(81, 133, 129, 1);
+  position: relative; /* Позиционирование для смещения top и left */
+  top: 6px; /* Смещение сверху */
+  left: 2.41px; /* Смещение слева */
+  width: 16px;
+  height: 16px;
+  border-bottom-color: transparent;
+
+}
+
+  
+  
+ 
+  

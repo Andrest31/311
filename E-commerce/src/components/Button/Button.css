@@ -1,0 +1,40 @@
+
+
+
+.button {
+    width: auto; /* Устанавливаем минимальную ширину */
+    height: auto; /* Устанавливаем минимальную высоту */
+    padding: var(--space-s) var(--space-l);
+    gap: var(--space-xxs);
+    min-height: 52px;
+ 
+    color:var( --button-primary-text);
+    border-top: none; /* Убираем верхнюю границу */
+    border-right: none; /* Убираем правую границу */
+    border-bottom: none; /* Убираем нижнюю границу */
+    border-left: none; /* Убираем левую границу */
+    background-color: var(--button-primary-bg); 
+
+}
+
+
+.button:not(.button-disabled):not(.button-loading):hover { /* Применяем hover только к кнопкам, которые не disabled и не loading */
+    background-color: var(--brand-hover); /* Цвет при наведении */
+}
+
+
+.button-disabled{
+    background-color: var(--button-primary-bg-disabled); 
+}
+
+.button-disabled:hover {
+    background-color: var(--button-primary-bg-disabled); /* Остается цвет для disabled */
+    cursor: not-allowed; /* Курсор указывает, что кнопка неактивна */
+}
+
+.button-loading {
+    display: flex;
+    align-items: center;
+    padding: 14px var(--space-l);
+ }
+

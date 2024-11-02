@@ -1,0 +1,90 @@
+.main-page {
+  background-color: var(--background);
+}
+
+.main-page__header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: rgb(114, 226, 226);
+  margin-bottom: 100px;
+}
+
+.main-page__controls {
+  margin-top: 100px;
+  text-align: center;
+  width: 640px;
+  margin-bottom: 24px;
+  justify-content: center;
+  margin: auto;
+  padding: 0 100px;
+}
+
+.main-page__search{
+  display: flex;
+  margin-bottom: 20px;
+  padding: 0 100px;
+
+}
+.main-page__search input {
+  flex-shrink: 1;
+  padding-right: 1910px;
+  margin-right: 24px;
+}
+
+.main-page__search button {
+  white-space: nowrap; /* Предотвращает перенос текста кнопки на новую строку */
+  right: 0px;
+}
+
+
+.main-page__filter{
+  width: 300px;
+  padding-left: 100px;
+  margin-bottom: 48px;
+}
+.main-page__catalog{
+  margin: 0 100px;
+}
+
+.main-page__catalog h1{
+  margin-bottom: 32px;
+}
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 79px;
+  margin-bottom: 48px;
+}
+
+.product-grid Button{
+  width: 155px;
+  height: 52px;
+}
+
+.main-page__pagination{
+  align-items: center;
+  align-content: center;
+  display: flex;
+  margin: 0 100px 0 100px;
+  padding-bottom: 48px;
+}
+.main-page__pagination left{
+  rotate: 90;
+}
+.main-page__pagination right{
+  rotate: -90;
+}
+.main-page__pagination Button{
+  width: 38px;
+  height: 42px;
+}
+.main-page__pagination_buttons{
+  margin:  0px 15px;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}

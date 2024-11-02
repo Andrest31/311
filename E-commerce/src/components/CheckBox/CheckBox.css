@@ -1,0 +1,125 @@
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-primary-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3 {
+    color: var(--text-primary-color);
+  }
+  
+  /* Стили для контейнера чекбокса */
+  .checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    width: 40px;  /* Устанавливаем ширину контейнера на 40 пикселей */
+    height: 40px; /* Устанавливаем высоту контейнера на 40 пикселей */
+    position: relative; /* Для позиционирования */
+  }
+
+
+  
+  /* Скрываем стандартный чекбокс */
+  .checkbox-input {
+    position: absolute; 
+    opacity: 0; /* Скрываем стандартный чекбокс */
+    width: 40px;  /* Устанавливаем ширину чекбокса */
+    height: 40px; /* Устанавливаем высоту чекбокса */
+  }
+  
+  .checkbox-custom {
+    width: 40px; /* Ширина чекбокса */
+    height: 40px; /* Высота чекбокса */
+    background-color: white; /* Фон по умолчанию */
+    position: relative; /* Для относительного позиционирования */
+   
+    transition: background-color var(--transition-duration) var(--transition-easing),
+                border-color var(--transition-duration) var(--transition-easing);
+  }
+
+
+ /* Рамка при наведении, если чекбокс не отключен */
+.checkbox-label:hover .checkbox-custom{
+    box-shadow: inset 0 0 0 1px var(--primary-color);
+}
+
+/* Рамка при клике, если чекбокс не отключен */
+.checkbox-label:active .checkbox-custom {
+    outline: 2px solid var(--primary-color); /* Цвет рамки при клике */
+}
+
+/* Убираем рамку при наведении на отключенный чекбокс */
+.checkbox-input:disabled + .checkbox-custom {
+    box-shadow: none; /* Уб ираем рамку для отключенного состояния */
+}
+
+
+  
+  /* Цвет фона при отключенном состоянии чекбокса */
+  .checkbox-input:disabled + .checkbox-custom {
+    background-color: rgba(255, 255, 255, 0.5); /* Заливка для отключенного чекбокса */
+  }
+  
+
+  /* Цвет галочки при активном состоянии */
+  .checkbox-input:checked + .checkbox-custom::after {
+    border-color: var(--primary-color); /* Галочка цвета primary_color при checked */
+  }
+  
+  /* Цвет галочки при отключенном состоянии */
+  .checkbox-input:checked:disabled + .checkbox-custom::after {
+    border-color: rgba(0, 0, 0, 0.2); /* Цвет галочки при disabled и checked */
+  }
+  
+  /* Убираем рамку для указанных состояний */
+  .checkbox-disabled + .checkbox-custom,
+  .checkbox-input:checked + .checkbox-custom,
+  .checkbox-input:checked:disabled + .checkbox-custom {
+    border-color: transparent; /* Убираем рамку для отключенного и отмеченного чекбокса */
+  }
+  
+  /* Убираем рамку, если clickDisabled равно false или undefined */
+  .checkbox-input:disabled + .checkbox-custom,
+  .checkbox-hover-disabled-false + .checkbox-custom {
+    border-color: transparent; /* Убираем рамку, если clickDisabled = false или undefined */
+  }
+  
+
+  
+
+  
+  /* Условия для состояния disabled */
+  .checkbox-disabled {
+    cursor: not-allowed;
+  }
+  
+  .checkbox-disabled .checkbox-custom {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Другие стили с использованием переменных */
+  .input {
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-medium);
+    height: var(--input-height);
+    padding: var(--spacing-small);
+  }
+  
+  button {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    padding: var(--spacing-xlarge);
+    border: none;
+    border-radius: var(--border-radius-small);
+    transition: background-color var(--transition-duration) var(--transition-easing);
+  }
+  
+  button:hover {
+    background-color: var(--primary-color);
+  }
+
+
+ 
