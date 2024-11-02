@@ -1,0 +1,112 @@
+/* Основные стили страницы продукта */
+.ProductPage {
+  padding: 230px 270px 0px 270px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: var(--font);
+}
+
+.ProductInfo {
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.ProductInfo h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.ProductPrice {
+  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.ProductDescription {
+  margin-top: 10px;
+  color: #666;
+}
+
+.ProductButtons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.BuyNowButton,
+.AddToCartButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.BuyNowButton {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.AddToCartButton {
+  background-color: #ddd;
+  color: black;
+  transition: background-color 0.3s;
+}
+
+.AddToCartButton:hover {
+  background-color: #bbb;
+}
+
+/* Стили для секции похожих товаров */
+.RelatedItems {
+  margin-top: 40px;
+}
+
+.RelatedItems h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.RelatedItemsGrid {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 200px;
+}
+.add-to-cart-button-2{
+  color: black;
+  background-color: white;
+  border: 1px black;
+}
+.page-title-text{
+  margin-left: 60px;
+  margin-bottom: 32px;
+}
+
+.RelatedItemCard {
+  width: 360px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.RelatedItemCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.RelatedItemCard .AddToCartButton {
+  width: 100%;
+  background-color: #ddd;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.RelatedItemCard .AddToCartButton:hover {
+  background-color: #bbb;
+}

@@ -32,7 +32,9 @@ const Card: React.FC<CardProps> = ({
   actionSlot,
 }) => (
   <div className={`card ${className}`} onClick={onClick}>
-    <img src={image} alt="card-image" className="card-image" />
+    <div className="card-image-container">
+      <img src={image} alt="card-image" className="card-image" />
+    </div>
 
     <div className="card-content">
       <div className="card-body">

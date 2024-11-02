@@ -37,6 +37,7 @@
 
 .header__logo {
 	z-index: 3;
+	cursor: pointer;
 }
 
 .header__menu{
@@ -51,6 +52,10 @@
 	display: flex;
 	gap:32px;
 	z-index: 3;
+}
+.header__basket, .header__user{
+	cursor: pointer;
+
 }
 
 .header__logo img {
