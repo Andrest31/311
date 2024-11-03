@@ -5,11 +5,29 @@
   color: #333;
   background-color: var(--font);
 }
+.ProductContentWrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Расстояние между изображением и контентом */
+  justify-content: center;
+  margin-left: 60px;
+}
+
+.page-title-product{
+  top: 0%;
+}
 
 .ProductInfo {
-  text-align: center;
+  flex: 1;
+  text-align: left;
   margin-bottom: 90px;
 }
+
+.ProductImage {
+  flex: 0 0 auto;
+  min-width: 600px;
+}
+
 
 .ProductInfo h1 {
   font-size: 28px;
@@ -30,8 +48,11 @@
 .ProductButtons {
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 48px;
+}
+.page-title-price{
+  margin: 48px 0;
 }
 
 .BuyNowButton,
