@@ -31,13 +31,11 @@ const Card: React.FC<CardProps> = ({
   onClick,
   actionSlot,
 }) => (
-  <div className={`card ${className}`} onClick={onClick}>
-    <div className="card-image-container">
-      <img src={image} alt="card-image" className="card-image" />
-    </div>
+  <div className={`card ${className}`}>
+    <img src={image} alt="card-image" className="card-image"  onClick={onClick}/>
 
     <div className="card-content">
-      <div className="card-body">
+      <div className="card-body "  onClick={onClick}>
         {captionSlot && <Text tag="p" color="secondary" view="p-14">{captionSlot}</Text>}
         {title && <Text tag="p" data-testid="text" className="card-title" weight="bold" view="p-20">{title}</Text>}
         {subtitle && <Text tag="p" data-testid="text" className="card-subtitle" color="secondary" view="p-16">{subtitle}</Text>}

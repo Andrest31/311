@@ -17,9 +17,7 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header__container _container">
         <div className="header__logo">
-          <Link to="/"> {/* Добавляем Link к главной странице */}
-            <Logo />
-          </Link>
+          <Logo />
         </div>
 
         <nav className="header__menu menu">
@@ -46,12 +44,8 @@ const Header: React.FC = () => {
         </nav>
 
         <div className="header__icons">
-          <div className="header__basket">
-            <Basket />
-          </div>
-          <div className="header__user">
-            <User />
-          </div>
+          <Basket />
+          <User />
         </div>
       </div>
     </header>

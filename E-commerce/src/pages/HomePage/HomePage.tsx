@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Loader from 'components/Loader';
 import Text from 'components/Text/Text';
@@ -7,8 +6,10 @@ import Input from 'components/Input';
 import Button from 'components/Button';
 import MultiDropdown from 'components/MultiDropdown';
 import Card from 'components/Card';
-import PaginationIcon from 'components/PaginationIcon/PaginationIcon';
+import ArrowDownIcon from 'components/icons/ArrowDownIcon';
 import './HomePage.css';
+import PaginationIcon from 'components/PaginationIcon/PaginationIcon';
+import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -20,14 +21,25 @@ interface Product {
 }
 
 const HomePage: React.FC = () => {
+
+
+  
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [searchValue, setSearchValue] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalProducts, setTotalProducts] = useState<number>(0); // новое состояние
-  const productsPerPage = 9;
-  const totalPages = Math.ceil(totalProducts / productsPerPage);
+  const totalPages = 10; // Общее количество страниц (можно заменить на динамическое значение)
+
+   // Навигация
+   const navigate = useNavigate();
+
+
+   
+   // Обработка клика по карточке для перехода на страницу с деталями продукта
+  const handleCardClick = (productId: number) => {
+    navigate(`/product/${productId}`); // Замените путь на нужный URL
+  };
 
   // Получение данных из API
   const fetchProducts = async (page: number) => {
@@ -35,20 +47,12 @@ const HomePage: React.FC = () => {
     try {
       const response = await axios.get('https://api.escuelajs.co/api/v1/products', {
         params: {
-          offset: (page - 1) * productsPerPage,
-          limit: productsPerPage,
+          offset: (page - 1) * 9,
+          limit: 9,
         },
       });
+      console.log('Products fetched from server:', response.data); // выводим данные в консоль
       setProducts(response.data);
-      
-      // Запрос для получения общего количества продуктов
-      const totalResponse = await axios.get('https://api.escuelajs.co/api/v1/products', {
-        params: {
-          offset: 0,
-          limit: 0,
-        },
-      });
-      setTotalProducts(totalResponse.data.length); // Устанавливаем общее количество
     } catch (error) {
       setError('Не удалось загрузить данные');
     } finally {
@@ -81,7 +85,7 @@ const HomePage: React.FC = () => {
               </Text>
             </div>
           </div>
-
+  
           <div className="products__controls">
             <div className="products__search">
               <div className="products__search-column--left">
@@ -93,7 +97,7 @@ const HomePage: React.FC = () => {
               </div>
               <Button className='products__search-column--right'>Find now</Button>
             </div>
-
+  
             <div className="products__filter">
               <MultiDropdown
                 options={[{ key: '1', value: 'Furniture' }, { key: '2', value: 'Electronics' }]}
@@ -103,59 +107,60 @@ const HomePage: React.FC = () => {
               />
             </div>
           </div>
-
+  
           <div className='products__body'>
             <div className='products__subtitle'>
               <Text view="p-32" className="page-title" weight="bold">
                 Total Products
               </Text>
               <Text view="p-20" color='accent' weight="bold">
-                {totalProducts} 
+                184 
               </Text>
             </div>
-
+    
             <section className="products__cards">
               {products.map(product => (
                 <div className="products__column" key={product.id}>
-                  <Link to={`/product/${product.id}`} className="product-link">
-                    <Card
-                      image={product.images[0]}
-                      title={<span style={{ color:'black', textDecoration: 'none' }}>{product.title}</span>}                      
-                      subtitle={product.description}
-                      captionSlot={product.category.name}
-                      contentSlot={<span style={{ color: 'black', textDecoration: 'none' }}>${product.price}</span>}
-                      actionSlot={<Button className="add-to-cart-button">Add to Cart</Button>}
-                      className="products__card" // Передаем класс для стилизации карточки
-                    />
-                  </Link>
+                  <Card
+                    image={product.images[0]}
+                    title={product.title}
+                    subtitle={product.description}
+                    captionSlot={product.category.name}
+                    contentSlot={`$${product.price}`}
+                    actionSlot={<Button className="add-to-cart-button">Add to Cart</Button>}
+                    className="products__card"
+                    onClick={() => handleCardClick(product.id)} // Передаем функцию навигации
+                  />
                 </div>
               ))}
             </section>
           </div>
-
+  
           <div className="products__pagination">
-            <div onClick={() => handlePageChange(currentPage > 1 ? currentPage - 1 : 1)}>
-              <PaginationIcon />
-            </div>
-            <div className="products__pagination-buttons">
-              {[1, 2, 3, "...", totalPages].map((page, index) => (
-                <Button
-                  key={index}
-                  className={`pagination-button ${page === currentPage ? 'active-page' : ''}`}
-                  onClick={() => typeof page === 'number' && handlePageChange(page)}
-                >
-                  {page}
-                </Button>
-              ))}
-            </div>
-            <div onClick={() => handlePageChange(currentPage < totalPages ? currentPage + 1 : totalPages)}>
-              <PaginationIcon direction="right" />
-            </div>
+          <div onClick={() => handlePageChange(currentPage > 1 ? currentPage - 1 : 1)}>
+            <PaginationIcon />
           </div>
+          <div className="products__pagination-buttons">
+            {[1, 2, 3, "...", totalPages].map((page, index) => (
+              <Button
+                key={index}
+                className={`pagination-button ${page === currentPage ? 'active-page' : ''}`}
+                onClick={() => typeof page === 'number' && handlePageChange(page)}
+              >
+                {page}
+              </Button>
+            ))}
+          </div>
+          <div onClick={() => handlePageChange(currentPage < totalPages ? currentPage + 1 : totalPages)}>
+            <PaginationIcon direction="right" />
+          </div>
+        </div>
         </div>
       </div>
     </main>
   );
+  
+  
 };
 
 export default HomePage;
