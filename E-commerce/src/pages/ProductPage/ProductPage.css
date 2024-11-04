@@ -1,133 +1,252 @@
+.page__product {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 146px;
+}
+
+
+._container-product{
+max-width: 1301px;
+height: 1346px;
+  margin: 0px auto;
+  box-sizing: content-box;
+
+}
+
+.product__button-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Выровнять кнопку по левому краю */
+
+}
+
+.product__buttton_back {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 129px;
+    height: 48px;
+    cursor: pointer;
+    text-align: start;
+}
+
+
+.product__content{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxl);
+}
+
+.product__card{
+    height: 600px;
+}
+.product__related-cards{
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--spacing-xlarge);
+
+}
+
+.related-products{
+
+}
+
+
+/* .product__title{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+} */
+
+
+.product__text-container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xlarge);
+
+}
+
+
+
+
+.product__text_title{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+
+}
+
+
+
+
+
+
+
+
+
+
 /* Основные стили страницы продукта */
 .ProductPage {
-  padding: 230px 270px 0px 270px;
-  font-family: Arial, sans-serif;
-  color: #333;
-  background-color: var(--font);
-}
-.ProductContentWrapper {
-  display: flex;
-  align-items: center;
-  gap: 30px; /* Расстояние между изображением и контентом */
-  justify-content: center;
-  margin-left: 60px;
+    padding: 230px 270px 0px 270px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: var(--font);
+  }
+  .ProductContentWrapper {
+    padding-top: var(--space-xxl);
+    display: flex;
+    gap: var(--space-xxl);
+    justify-content: center;
+    width: 1301px;
+    
+  }
+  
+
+  
+  .ImageSlider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.page-title-product{
-  top: 0%;
+.slider-button {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 1);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    top: 50%;
+    transform: translateY(-50%); /* Центрирование по вертикали */
 }
 
-.ProductInfo {
-  flex: 1;
-  text-align: left;
-  margin-bottom: 90px;
+.slider-button-left {
+    left: 24px; /* Отступ слева */
+}
+
+.slider-button-right {
+    right: 24px; /* Отступ справа */
+}
+
+.slider-button.disabled {
+    opacity: 0.6; /* 60% прозрачности */
 }
 
 .ProductImage {
-  flex: 0 0 auto;
-  min-width: 600px;
+    flex: 0 0 auto;
+    min-width: 600px;
+    max-width: 100%;
+}
+
+  
+  
+  
+.product__price{
+    width: 338px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxl);
+
+}
+  
+ 
+
+
+.product__buttons{
+    width: 100%;
+    height: 52px;
+    display: flex;
+    gap: var(--space-xxl);
+
+
 }
 
 
-.ProductInfo h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.ProductPrice {
-  font-size: 24px;
-  color: #333;
-  margin-top: 10px;
-}
-
-.ProductDescription {
-  margin-top: 10px;
-  color: #666;
-}
-
-.ProductButtons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: left;
-  gap: 48px;
-}
-.page-title-price{
-  margin: 48px 0;
-}
-
-.BuyNowButton,
-.AddToCartButton {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.BuyNowButton {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.AddToCartButton {
-  background-color: #ddd;
-  color: black;
-  transition: background-color 0.3s;
-}
-
-.AddToCartButton:hover {
-  background-color: #bbb;
-}
-
-/* Стили для секции похожих товаров */
-.RelatedItems {
-  margin-top: 40px;
-}
-
-.RelatedItems h2 {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.RelatedItemsGrid {
-  display: flex;
-  gap: 80px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-bottom: 200px;
-}
-.add-to-cart-button-2{
-  color: black;
-  background-color: white;
-  border: 1px black;
-}
-.page-title-text{
-  margin-left: 60px;
-  margin-bottom: 32px;
-}
-
-.RelatedItemCard {
-  width: 360px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.RelatedItemCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.add-to-cart-button {
+    color: var(--primary);
+    background-color: var(--font);
+    border: 1px solid var(--secondary);
 }
 
 
-.RelatedItemCard .AddToCartButton {
-  width: 100%;
-  background-color: #ddd;
-  color: black;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
 
-.RelatedItemCard .AddToCartButton:hover {
-  background-color: #bbb;
-}
+
+  
+  .BuyNowButton,
+  .AddToCartButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .BuyNowButton {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .AddToCartButton {
+    background-color: #ddd;
+    color: black;
+    transition: background-color 0.3s;
+  }
+  
+  .AddToCartButton:hover {
+    background-color: #bbb;
+  }
+  
+  /* Стили для секции похожих товаров */
+  .RelatedItems {
+    margin-top: 40px;
+  }
+  
+  .RelatedItems h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .RelatedItemsGrid {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 200px;
+  }
+ 
+
+  
+
+  
+  .RelatedItemCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .RelatedItemCard .AddToCartButton {
+    width: 100%;
+    background-color: #ddd;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .RelatedItemCard .AddToCartButton:hover {
+    background-color: #bbb;
+  }
+  

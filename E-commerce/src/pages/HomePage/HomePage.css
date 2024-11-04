@@ -6,8 +6,6 @@
     margin: 90px auto 0px auto; */
     padding-top: 90px;
     background-color: var(--font);
-
-
 }
 
 
@@ -62,11 +60,19 @@
 
 
 .products__cards {
+
+    padding-bottom: 30px;
+}
+
+
+._cards{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); /* Устанавливает фиксированную ширину для карточек */
+    grid-template-columns: repeat(3, minmax(360px, 1fr)); /* Устанавливает фиксированную ширину для карточек */
+    grid-template-rows: repeat(auto-fill, 1fr);
     gap: 30px 80px; 
     justify-content: center; 
+
 }
 
 .products__column {
@@ -157,7 +163,7 @@
     gap: var(--space-xl);
     display: flex;
     flex-direction: column;
-    padding-bottom: 48px;
+
    
 }
 .products__search {
@@ -180,62 +186,6 @@
 }
 
 
-.basket-container{
-    position: relative;
-}
-
-.basket__img{
-    padding: 12px;
-    border-radius: 50%;
-    background-color: white;
-    width: 65px;
-    height: 65px;
-
-}
-.basket_amount {
-    position: absolute;
-    top: 0;
-    left: 45px; 
-    background-color: var(--main_color);
-    width: 20px; /* Увеличил размер кружка для наглядности */
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-
-.products__search input {
-  padding: 10px;
-  appearance: none; /* Убирает стандартную стрелку */
-  -moz-appearance: none; /* Для Firefox */
-  -webkit-appearance: none; /* Для Safari и Chrome */
-  width: 100%; /* Ширина на 100% */
-  box-sizing: border-box; /* Учитываем padding и border в ширину */
-  position: relative; /* Для правильного позиционирования */
-}
-
-/* Дополнительные стили для select */
-.products__search select {
-    padding: 10px;
-    border: 2px solid var(--border);
-    border-radius: 5px;
-    appearance: none; /* Убирает стандартную стрелку */
-    -moz-appearance: none; /* Для Firefox */
-    -webkit-appearance: none; /* Для Safari и Chrome */
-
-    width: 100%; /* Ширина на 100% */
-    box-sizing: border-box; /* Учитываем padding и border в ширину */
-    position: relative; /* Для правильного позиционирования */
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5"><path fill="%23666" d="M0 0l5 5 5-5H0z"/></svg>') no-repeat right 10px center; /* Ваша стрелочка */
-
-    background-size: 12px; /* Размер стрелочки */
-    padding-right: 30px; /* Пространство для стрелочки */
-}
 
 
 
@@ -249,13 +199,15 @@
   .pagination-button {
     background: none;
     border: none;
-    padding: 8px;
+    padding: 3px 8px;
     cursor: pointer;
+    width: 38px;
+    height: 42px;
     color: #333;
   }
   
   .pagination-button.active-page {
-    background-color: #407d7d;
+    background-color: var(--primary-color);
     width: 38px;
     height: 42px;
     color: #fff;

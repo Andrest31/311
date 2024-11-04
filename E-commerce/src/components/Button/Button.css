@@ -6,7 +6,6 @@
     height: auto; /* Устанавливаем минимальную высоту */
     padding: var(--space-s) var(--space-l);
     gap: var(--space-xxs);
-    min-height: 52px;
  
     color:var( --button-primary-text);
     border-top: none; /* Убираем верхнюю границу */

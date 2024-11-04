@@ -17,7 +17,9 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header__container _container">
         <div className="header__logo">
-          <Logo />
+          <Link to="/"> {/* Добавляем Link к главной странице */}
+            <Logo />
+          </Link>
         </div>
 
         <nav className="header__menu menu">

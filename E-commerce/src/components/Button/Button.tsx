@@ -10,9 +10,20 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
   /** Текст кнопки */
   children: React.ReactNode;
+  /** Ширина кнопки */
+  width?: string | number;
+  height?: string | number;
 };
 
-const Button: React.FC<ButtonProps> = ({ loading = false, disabled=false, children, className, ...props }) => {
+const Button: React.FC<ButtonProps> = ({ 
+  loading = false, 
+  disabled = false, 
+  children, 
+  className, 
+  height= '52px',
+  width = '155px', 
+  ...props 
+}) => {
   // Используем classNames для управления классами кнопки
   const buttonClass = classNames('button', className, {
     'button-loading': loading, // класс для состояния загрузки
@@ -30,6 +41,7 @@ const Button: React.FC<ButtonProps> = ({ loading = false, disabled=false, childr
     <button
       className={buttonClass}
       disabled={loading || disabled} // Заблокируем кнопку при loading или disabled
+      style={{ width, height}} // Устанавливаем ширину кнопки через инлайн-стиль
       {...props} 
     >
       {loading ? (
@@ -42,7 +54,6 @@ const Button: React.FC<ButtonProps> = ({ loading = false, disabled=false, childr
       )}
     </button>
   );
-  
 };
 
 export default Button;
